@@ -1,0 +1,19 @@
+GET http://localhost:8000/students
+
+###
+
+GET http://localhost:8000/students/643dc14017db71b4f0ee61f1
+
+###
+
+POST http://localhost:8000/students
+Content-Type: application/json
+
+  {
+    "name": " add the name here",
+    "class": "add the class name here"
+  }
+
+
+
+
