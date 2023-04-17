@@ -19,6 +19,7 @@
   "homepage": "https://github.com/josephdrivera/2_9_Assignment_CRUD-API-Deployment#readme",
   "dependencies": {
     "cord": "^1.0.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mongoose": "^7.0.4",
