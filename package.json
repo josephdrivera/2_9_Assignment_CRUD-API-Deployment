@@ -5,16 +5,18 @@
     "engines": {
         "node": "18.12.1"
     },
-    "scripts": {
-        "install-reactjs": "npm install --prefix reactjs",
-        "install-api": "npm install --prefix api",
-        "build-reactjs": "npm run build --prefix reactjs",
-        "heroku-postbuild": "concurrently \"npm run install-reactjs\" \"npm run install-api\" \"npm run build-reactjs\"",
-        "start": "npm run start --prefix api",
-        "dev:reactjs": "concurrently \"npm run start --prefix reactjs\" \"npm run start --prefix api\"",
-        "react": "cd reactjs && npm start",
-        "api": "cd api; nodemon server.js"
-    },
+    "main": "index.js",
+"scripts": {
+  "install-crud-react-app": "npm install --prefix crud-react-app",
+  "install-api": "npm install --prefix api",
+  "build-crud-react-app": "npm run build --prefix crud-react-app",
+  "heroku-postbuild": "concurrently \"npm run install-crud-react-app\" \"npm run install-api\" && concurrently \"npm run build-crud-react-app\"",
+  "start": "npm run start --prefix api",
+  "dev:crud-react-app": "concurrently \"npm run start --prefix crud-react-app\" \"npm run start --prefix api\"",
+  "react": "cd crud-react-app && npm start",
+  "api": "cd api && nodemon server.js"
+},
+
     "dependencies": {
         "concurrently": "^8.0.1",
         "express": "^4.17.1",
