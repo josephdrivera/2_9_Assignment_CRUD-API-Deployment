@@ -2,7 +2,7 @@ GET http://localhost:8000/students
 
 ###
 
-GET http://localhost:8000/students/643dc14017db71b4f0ee61f1
+GET http://localhost:8000/students/
 
 ###
 
