@@ -22,8 +22,14 @@ db.on('error', (error) => console.error(error));
 db.once('open', () => console.log('Connected to Database'));
 
 app.use(express.json());
-app.use('/students', studentRouter);
 
+app.use('/api/v1/students', studentRouter);
+
+app.use(express.static(path.join(__dirname, '../crud-react-app/build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../crud-react-app/build/index.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
