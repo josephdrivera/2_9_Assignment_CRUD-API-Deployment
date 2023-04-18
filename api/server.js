@@ -7,8 +7,9 @@ const cors = require('cors');
 
 
 const app = express();
+app.use(cors());
 
-
+// process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 8000;
 const studentRouter = require('./routes/students');
 
