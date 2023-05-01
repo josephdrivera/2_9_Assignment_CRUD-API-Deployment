@@ -1,6 +1,9 @@
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
+const passportService = require('../services/passport');
 
+const requireAuth = passport.authenticate('jwt', { session: false });
 const Student = require('../models/student');
 
 // RESTFUL ENDPOINTS
@@ -24,7 +27,7 @@ const getStudents = async (req, res) => {
 
 
 // GET ALL
-router.get('/', async (req, res) => {
+router.get('/', requireAuth, async (req, res) => {
     try {
         const students = await Student.find();
         res.json(students);

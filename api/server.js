@@ -12,6 +12,7 @@ app.use(cors());
 // process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 8000;
 const studentRouter = require('./routes/students');
+const authRouter = require('./routes/auth');
 
 
 const DATABASE_URL = process.env.DATABASE_URL;
@@ -24,6 +25,7 @@ db.once('open', () => console.log('Connected to Database'));
 app.use(express.json());
 
 app.use('/api/v1/students', studentRouter);
+app.use('/api/v1/auth', authRouter);
 
 app.use(express.static(path.join(__dirname, '../crud-react-app/build')));
 
