@@ -11,7 +11,7 @@ const AuthenticationController = require('../controllers/authentication_controll
 
 
 
-router.post('/register', AuthenticationController.register);
+router.post('/', AuthenticationController.register);
 router.post('/login', protectedRoutes, AuthenticationController.login);
 
 
